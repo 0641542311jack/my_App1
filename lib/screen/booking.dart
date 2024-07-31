@@ -24,7 +24,7 @@ class _BookingState extends State<Booking> {
       ),
       backgroundColor: Color.fromARGB(255, 4, 37, 72),
       body: Container(
-        margin: EdgeInsets.only(left: 10, top: 10, right: 10,bottom: 360),
+        margin: EdgeInsets.only(left: 10, top: 20, right: 10,bottom: 360),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -42,8 +42,8 @@ class _BookingState extends State<Booking> {
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.4), // สีของเงา
-                          spreadRadius:10, // การกระจายของเงา
+                          color: Colors.black.withOpacity(0.6), // สีของเงา
+                          spreadRadius: 5, // การกระจายของเงา
                           blurRadius: 20, // การเบลอของเงา
                           offset: Offset(0, 3), // ตำแหน่งของเงา
                         )

@@ -28,7 +28,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 Text(
                   "Welcome",
                   style: TextStyle(
-                      color: Colors.black,
+                      color: const Color.fromARGB(255, 255, 255, 255),
                       fontSize: 20,
                       fontWeight: FontWeight.w500),
                 )
@@ -55,8 +55,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 Flexible(
                   fit: FlexFit.tight,
                   child: GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Hair(service: "ทรงผมแนะนำ")));
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  Hair(service: "ทรงผมแนะนำ")));
                     },
                     child: Container(
                       height: 130,
@@ -64,8 +68,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       decoration: BoxDecoration(
                           color: Color.fromARGB(255, 255, 153, 0),
                           borderRadius: BorderRadius.circular(
-                              15)), //ทำให้ปุ่มโค้งไม่เป็นเหลี่ยม
-                    
+                              15), //ทำให้ปุ่มโค้งไม่เป็นเหลี่ยม
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.6), // สีของเงา
+                              spreadRadius: 5, // การกระจายของเงา
+                              blurRadius: 20, // การเบลอของเงา
+                              offset: Offset(0, 3), // ตำแหน่งของเงา
+                            )
+                          ]),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -95,16 +106,27 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 Flexible(
                   fit: FlexFit.tight,
                   child: GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => Booking(service: "จองร้านตัดผม")));
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  Booking(service: "จองร้านตัดผม")));
                     },
                     child: Container(
                       height: 130,
                       width: 150,
                       decoration: BoxDecoration(
                           color: Color.fromARGB(255, 255, 153, 0),
-                          borderRadius: BorderRadius.circular(
-                              15)), //ทำให้ปุ่มโค้งไม่เป็นเหลี่ยม
+                          borderRadius: BorderRadius.circular(15),//ทำให้ปุ่มโค้งไม่เป็นเหลี่ยม
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.6), // สีของเงา
+                              spreadRadius: 5, // การกระจายของเงา
+                              blurRadius: 20, // การเบลอของเงา
+                              offset: Offset(0, 3), // ตำแหน่งของเงา
+                            )
+                          ]), 
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -142,8 +164,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     width: 150,
                     decoration: BoxDecoration(
                         color: Color.fromARGB(255, 255, 153, 0),
-                        borderRadius: BorderRadius.circular(
-                            15)), //ทำให้ปุ่มโค้งไม่เป็นเหลี่ยม
+                        borderRadius: BorderRadius.circular(15),//ทำให้ปุ่มโค้งไม่เป็นเหลี่ยม
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.6), // สีของเงา
+                            spreadRadius: 5, // การกระจายของเงา
+                            blurRadius: 20, // การเบลอของเงา
+                            offset: Offset(0, 3), // ตำแหน่งของเงา
+                          )
+                        ]), 
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -176,8 +205,15 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     width: 150,
                     decoration: BoxDecoration(
                         color: Color.fromARGB(255, 255, 153, 0),
-                        borderRadius: BorderRadius.circular(
-                            15)), //ทำให้ปุ่มโค้งไม่เป็นเหลี่ยม
+                        borderRadius: BorderRadius.circular(15), //ทำให้ปุ่มโค้งไม่เป็นเหลี่ยม
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.6), // สีของเงา
+                            spreadRadius: 5, // การกระจายของเงา
+                            blurRadius: 20, // การเบลอของเงา
+                            offset: Offset(0, 3), // ตำแหน่งของเงา
+                          )
+                        ]),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
