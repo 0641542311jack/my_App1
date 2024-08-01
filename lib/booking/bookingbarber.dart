@@ -12,16 +12,30 @@ class _BookingBarberState extends State<BookingBarber> {
   DateTime _selectedDate = DateTime.now();
 
   Future<void> _selectDate(BuildContext context) async {
+    //เซ็ตวันเดือนปี
     final DateTime? picked = await showDatePicker(
         context: context,
         initialDate: _selectedDate,
         firstDate: DateTime(2024),
         lastDate: DateTime(2025));
-        if (picked != null && picked != _selectedDate) {
-          setState(() {
-            _selectedDate = picked;
-          });
-        }
+    if (picked != null && picked != _selectedDate) {
+      setState(() {
+        _selectedDate = picked;
+      });
+    }
+  }
+
+  TimeOfDay _selectedTime = TimeOfDay.now();
+
+  Future<void> _selectTime(BuildContext context) async {
+    //เซ็ตเวลา
+    final TimeOfDay? picked =
+        await showTimePicker(context: context, initialTime: _selectedTime);
+    if (picked != null && picked != _selectedTime) {
+      setState(() {
+        _selectedTime = picked;
+      });
+    }
   }
 
   @override
@@ -86,7 +100,7 @@ class _BookingBarberState extends State<BookingBarber> {
                     mainAxisAlignment: MainAxisAlignment.center, //จัดกึ่งกลาง
                     children: [
                       GestureDetector(
-                        onTap: (){
+                        onTap: () {
                           _selectDate(context);
                         },
                         child: Icon(
@@ -110,6 +124,78 @@ class _BookingBarberState extends State<BookingBarber> {
                 ],
               ),
             ),
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              padding: EdgeInsets.only(
+                  top: 10, bottom: 10), //จัดตัวหนังสือในกรอบสี่เหลี่ยม
+
+              decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 255, 153, 0),
+                  borderRadius:
+                      BorderRadius.circular(20)), //borderRadiusทำมุมโค้ง
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+                children: [
+                  Text(
+                    "Set a Time",
+                    style: TextStyle(
+                        color: const Color.fromARGB(255, 4, 37, 72),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center, //จัดกึ่งกลาง
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          _selectTime(context);
+                        },
+                        child: Icon(
+                          Icons.alarm,
+                          color: Colors.white,
+                          size: 30,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        _selectedTime.format(context), //แสดงวันเดือนปีปัจจุบัน
+                        style: TextStyle(
+                            color: const Color.fromARGB(255, 255, 255, 255),
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 60),
+            GestureDetector(
+              onTap: () {},
+              child: Container(
+                width: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 255, 153, 0),
+                    borderRadius: BorderRadius.circular(20)),
+                child: Center(
+                  child: Text(
+                    "BOOK NOW",
+                    style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
